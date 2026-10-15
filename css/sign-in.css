@@ -1,0 +1,139 @@
+/* Sign-in page (sign-in.html). Requires base.css. */
+
+/* Sign-in */
+.signin {
+  background: var(--green);
+  color: var(--white);
+  padding: 88px 0 112px;
+}
+.signin__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+/* Card and notice share the .panel treatment from index.html */
+.signin__card,
+.notice {
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 32px;
+  font-size: 1rem;
+}
+.signin__card {
+  display: grid;
+  gap: 28px;
+}
+.signin__card h1 { font-size: clamp(2.25rem, 3.6vw, 3rem); line-height: 1.15; }
+.signin__intro { font-size: 1.125rem; }
+
+.signin form { display: grid; gap: 24px; }
+.field { display: grid; gap: 8px; }
+.field label { font-weight: 700; font-size: 1.0625rem; }
+.field input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.0625rem;
+}
+.field input:focus-visible { outline-offset: 0; }
+.field__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--error);
+  font-weight: 700;
+}
+.field__error::before {
+  content: "!";
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--error);
+  color: var(--white);
+  font-size: 0.875rem;
+}
+.field__error[hidden] { display: none; }
+.field input[aria-invalid="true"] {
+  border-color: var(--error);
+  border-left-width: 6px;
+}
+
+.ack { font-size: 1rem; }
+.btn--block { width: 100%; font-size: 1.0625rem; min-height: 52px; }
+
+.signin__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.signin__training {
+  border-top: 1px solid #4a4a4a;
+  padding-top: 24px;
+  display: grid;
+  gap: 4px;
+}
+.signin__training h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+
+.notice {
+  display: grid;
+  gap: 20px;
+}
+.notice h2 { font-size: 1.75rem; }
+.notice ul {
+  margin: 0;
+  padding-left: 1.25em;
+  display: grid;
+  gap: 12px;
+}
+.notice li { max-width: var(--measure); }
+.notice__contact { font-size: 1rem; }
+
+
+/* Motion: runs only under prefers-reduced-motion: no-preference. No JavaScript needed. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Card and notice: staggered entrance on load */
+  .signin__card, .notice {
+    animation: rise 0.7s var(--ease-out) both;
+  }
+  .notice { animation-delay: 120ms; }
+
+  /* Error message eases in (fade only, no shaking) */
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+  .field__error:not([hidden]) { animation: fade-in 0.25s ease-out; }
+}
+
+/* Windows High Contrast / forced colors */
+@media (forced-colors: active) {
+  .field__error::before { forced-color-adjust: none; background: CanvasText; color: Canvas; }
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .signin { padding: 48px 0 72px; }
+  .signin__grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 600px) {
+  .signin__card, .notice { padding: 32px 20px; }
+}

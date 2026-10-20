@@ -32,7 +32,7 @@ From top to bottom:
 2. **Header:** SF-DART logo (links back to this page) and navigation: What's inside, How it works, Report Training, Help, and a Sign In button.
 3. **Introduction:** what SF-DART is, a Sign In button and a photo.
 4. **Status strip (green):** current evaluation round, most recent TRS II scores and system status. **This text is typed in by hand. It does not update itself and must be edited every quarter.**
-5. **What's inside (dark blue):** the four TRS II score elements, a sample scorecard (made-up data, labelled as such), a table showing how grades map to tiers, and the data sources behind SF-DART.
+5. **What's inside (dark blue):** the four TRS II score elements (each card with its own icon), a sample scorecard (made-up data, labelled as such), a table showing how grades map to tiers, and the data sources behind SF-DART.
 6. **How it works:** four steps from getting an account to looking at case details.
 7. **Annual training credit (light gray):** a "Report your training" button that opens the training reporting site.
 8. **Help (green):** technical support email, the FHA Resource Center phone number, and resource links.
@@ -72,6 +72,10 @@ img/
   hero-800.jpg      Home page photo, smaller version for phones
   hero-1400.jpg     Home page photo, larger version for desktops
   sfdart-logo.svg   SF-DART seal shown in the header
+  sfdart-icon-foreclosure-prevention.svg      "What's inside" card icons, one per TRS II element
+  sfdart-icon-redefaults.svg
+  sfdart-icon-sfdms-reporting.svg
+  sfdart-icon-loss-mitigation-engagement.svg
 ```
 
 Each page loads `base.css` first, then its own stylesheet. The order matters.
@@ -83,6 +87,7 @@ Each page loads `base.css` first, then its own stylesheet. The order matters.
 | Status strip (round, latest scores, system status) | `index.html`, the section marked `class="status"` |
 | Legal notice text | `sign-in.html`, the section marked `class="notice"` (client-approved wording) |
 | Support email address | Search all `.html` files for `sfdart-support@hud.gov`; it appears in several places |
+| "What's inside" card icons | Replace the matching `img/sfdart-icon-*.svg` file. Keep the green circle (`#10653e`) and white strokes so the contrast figures below still hold, and keep `alt=""` on the `<img>` in `index.html`. |
 | Colors | `css/base.css`, top of the file. Each color notes its contrast ratio; recheck contrast after any change (see Accessibility below). |
 
 ### Where every external link goes
@@ -123,6 +128,7 @@ WCAG has three levels:
 - **Zoom test:** passed on October 20, 2026. Both pages work at 200% and 400% zoom with nothing cut off and no sideways scrolling.
 - **Automated scan:** passed on October 20, 2026. pa11y with the axe and HTML_CodeSniffer engines found no errors at Level AA or AAA on either page, including the sign-in page with its error message showing.
 - **VoiceOver (Mac):** worked on October 20, 2026, in an informal check of both pages.
+- **Card icons:** the "What's inside" icons were added after the tests above. They were reviewed in the code on October 20, 2026, but the automated scan, keyboard, zoom and screen reader checks have not been repeated since.
 - **Recommended before release:** a check with NVDA or JAWS on Windows, the screen readers most federal users rely on. Section 508 doesn't require testing with any particular screen reader, but HUD's Section 508 office may run its own test (often JAWS) before launch. The linked PDFs must also be checked before the site is described as 508 compliant.
 
 ### What was built in
@@ -141,9 +147,10 @@ Each item lists the WCAG success criterion number it addresses, for auditors.
 | Text line length, line spacing and paragraph spacing are controlled | Easier reading for people with dyslexia or low vision | 1.4.8 |
 | The support contact is the first footer link on every page | Help is always in the same place | 3.2.6 |
 | Sign-in errors appear as text, are announced by screen readers and move the cursor to the field | Everyone knows what went wrong and how to fix it | 3.3.1, 3.3.3, 4.1.3 |
+| The "What's inside" card icons have empty alt text, so screen readers skip them; the card heading below each icon already names it. White strokes on the green circle are 7.11:1, and the circle on the gray card is 5.04:1 | Screen reader users don't hear each element named twice, and the icons are easy to see | 1.1.1, 1.4.11 |
 | Lists, headings, the table and page regions are marked up so screen readers can announce them | Blind users can understand the page structure and navigate it | 1.3.1 |
 | Layout adapts from wide desktop screens down to phones, and to 400% zoom | No sideways scrolling or cut-off content | 1.4.4, 1.4.10 |
-| Score bars, icons and outlines switch to system colors in Windows High Contrast mode | Works for people who use high-contrast settings | n/a |
+| Score bars, icons and outlines switch to system colors in Windows High Contrast mode. The "What's inside" card icons are images, so they keep their own green and white and stay visible | Works for people who use high-contrast settings | n/a |
 | All content shows without JavaScript and when printed | Nothing is hidden if scripts fail or are blocked | n/a |
 
 ### Testing still needed before release
@@ -167,6 +174,7 @@ Each item lists the WCAG success criterion number it addresses, for auditors.
 
    Warnings you can expect and ignore:
    - The logo image has empty alt text on purpose: the site name right next to it is the link's text.
+   - The four "What's inside" card icons have empty alt text on purpose: each card's heading names the element.
    - Some text is "absolutely positioned": this is screen-reader-only text that isn't visible on screen.
    - "Consider using a caption" on the grades table: the table is already labelled by the heading above it.
 

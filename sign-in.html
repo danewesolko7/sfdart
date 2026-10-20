@@ -29,19 +29,12 @@
           <span class="brand__tagline">Single Family Data Analysis and Reporting Tool</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a href="index.html#whats-inside">What's inside</a></li>
-          <li><a href="index.html#how-it-works">How it works</a></li>
-          <li><a href="index.html#help">Help</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="signin" aria-labelledby="signin-title">
-      <div class="wrap signin__grid">
+      <div class="wrap--wide signin__grid">
         <div class="signin__card">
           <p class="eyebrow">Secure sign-in</p>
           <h1 id="signin-title">Sign in to <abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr></h1>
@@ -50,38 +43,34 @@
           <form id="signin-form" action="/sign-in/continue" method="post" novalidate>
             <div class="field">
               <label for="username">Username</label>
-              <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required aria-describedby="username-error ack">
-              <p class="field__error" id="username-error" hidden><span class="visually-hidden">Error:</span> Enter your username.</p>
+              <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required aria-describedby="ack">
+              <p class="field__error" id="username-error" role="alert" hidden><span class="visually-hidden">Error:</span> Enter your username.</p>
             </div>
 
-            <p class="ack" id="ack">By selecting <strong>Agree and continue</strong>, you acknowledge the system use notice and accept the <a href="/sfdart_user_agreement.pdf">Security and Usage Agreement (PDF)</a>.</p>
+            <p class="ack" id="ack">By selecting <strong>Agree and continue</strong>, you acknowledge the legal notice and accept the <a href="https://sfdart.hud.gov/sfdart_user_agreement.pdf#page=1">Security and Usage Agreement (PDF)</a>.</p>
 
             <button class="btn btn--primary btn--block" type="submit">Agree and continue</button>
           </form>
 
-          <ul class="signin__links">
+          <ul class="signin__links" role="list">
             <li><a class="link" href="mailto:sfdart-support@hud.gov">Help signing in</a></li>
-            <li><a class="link" href="/request-access">Request an account</a></li>
           </ul>
 
           <div class="signin__training">
-            <h2>Servicer report training</h2>
-            <a class="link" href="/training/sign-in">Sign in to the training environment</a>
+            <h2>Annual training credit</h2>
+            <p>Already completed training? Report it toward your annual training credit.</p>
+            <a class="link" href="https://sfdart.hud.gov/dashboard-ta.html">Report your training</a>
           </div>
         </div>
 
         <aside class="notice" aria-labelledby="notice-title">
-          <h2 id="notice-title">System use notice</h2>
-          <p>You are accessing a U.S. Government information system. By using it, you understand and agree that:</p>
-          <ul>
-            <li>Use is restricted to authorized users only.</li>
-            <li>Your activity may be monitored, recorded, and audited, and you consent to that monitoring.</li>
-            <li>Information on this system may be disclosed for any lawful government purpose.</li>
-            <li>Unauthorized use, or exceeding your authorized access, is prohibited and subject to criminal and civil penalties under 18 <abbr title="United States Code">U.S.C.</abbr> § 1030.</li>
-            <li>You agree to follow U.S. Department of Housing and Urban Development (<abbr title="U.S. Department of Housing and Urban Development">HUD</abbr>) security guidelines and policy.</li>
-          </ul>
-          <a class="link" href="/sfdart_user_agreement.pdf">Read the full Security and Usage Agreement (PDF)</a>
-          <p class="notice__contact">Technical questions: <a class="link" href="mailto:sfdart-support@hud.gov">sfdart-support@hud.gov</a></p>
+          <h2 id="notice-title">Legal Notice: U.S. Department of Housing and Urban Development</h2>
+          <div class="notice__body">
+            <p>The Single Family – Data Analysis &amp; Reporting Tool (<abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr>) system is a secure website application operated in the interests of the U.S. Government and is administered by a contracted Business Service Provider. The use of this U.S. Government system is restricted to authorized users only. Unauthorized use of this U.S. Government system is prohibited and subject to criminal/civil penalties. This system may be monitored/subject to audit, to which you consent by using the system. System Data may be disclosed for any lawful government purpose. For more information <a href="https://sfdart.hud.gov/sfdart_user_agreement.pdf#page=3">click here<span class="visually-hidden"> to read the Security Addendum in the Security and Usage Agreement (PDF)</span></a>. Access is restricted to authorized users only.</p>
+            <p>Anyone who accesses a Federal computer system without authorization or exceeds their access authority, and by any means of such conduct obtains, alters, damages, destroys, discloses information, or prevents authorized use of information on the computer, shall be subject to fine or imprisonment, or both.</p>
+            <p>All <abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr> application users are expected to comply with <abbr title="U.S. Department of Housing and Urban Development">HUD</abbr> Security guidelines and Policy incorporated herein by reference. Mortgagees agree that their staff will comply with this agreement. All technical communications related to the <abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr> application are to be submitted to the <abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr> Help Desk at <a href="mailto:sfdart-support@hud.gov">sfdart-support@hud.gov</a>. Logging into the <abbr title="Single Family Data Analysis and Reporting Tool">SF-DART</abbr> application environment signifies your acceptance of the Security and Usage Agreement and constitutes your electronic signature of agreement.</p>
+          </div>
+          <a class="link" href="https://sfdart.hud.gov/sfdart_user_agreement.pdf#page=1">Read the full Security and Usage Agreement (PDF)</a>
         </aside>
       </div>
     </section>
@@ -93,7 +82,8 @@
         <p>An official website of the U.S.A.</p>
         <p>This website complies with Executive Order 14224. English is the official language of the U.S. Government, and the English-language version of this website is the authoritative source for all federal information contained herein.</p>
       </div>
-      <ul>
+      <ul role="list">
+        <li><a class="link" href="mailto:sfdart-support@hud.gov">Contact support: sfdart-support@hud.gov</a></li>
         <li><a class="link" href="https://www.hud.gov/accessibility">Accessibility policy</a></li>
         <li><a class="link" href="https://www.hud.gov/privacy">Privacy and security policies</a></li>
       </ul>
@@ -108,6 +98,8 @@
 
       const setError = (show) => {
         error.hidden = !show;
+        // Reference the error only while it's shown; hidden text referenced by aria-describedby is still announced.
+        input.setAttribute("aria-describedby", show ? "username-error ack" : "ack");
         if (show) input.setAttribute("aria-invalid", "true");
         else input.removeAttribute("aria-invalid");
       };

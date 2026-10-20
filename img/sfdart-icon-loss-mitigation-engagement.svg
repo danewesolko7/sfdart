@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="t">
+  <title id="t">Loss Mitigation Engagement</title>
+  <circle cx="32" cy="32" r="32" fill="#10653e"/>
+  <g transform="translate(14 14) scale(1.125)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6.5 H18.5 C19.6 6.5 20.5 7.4 20.5 8.5 V15.5 C20.5 16.6 19.6 17.5 18.5 17.5 H11 L6.5 21.5 V17.5 H6 C4.9 17.5 4 16.6 4 15.5 Z"/><path d="M24 12 H26 C27.1 12 28 12.9 28 14 V21 C28 22.1 27.1 23 26 23 H25.5 V27 L21 23 H14 C12.9 23 12 22.1 12 21 V20.5"/><path d="M8.5 12 H8.6 M12.25 12 H12.35 M16 12 H16.1" stroke-width="2.6"/>
+  </g>
+</svg>

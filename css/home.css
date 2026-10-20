@@ -80,13 +80,10 @@
   box-shadow: var(--shadow);
   padding: 40px 24px 48px;
 }
-.element::before {
-  content: "";
+.element__icon {
   display: block;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--green);
+  width: 56px;
+  height: 56px;
   margin-bottom: 18px;
 }
 .element h3 { font-size: 1.5rem; margin-bottom: 20px; }
@@ -396,7 +393,6 @@
     border-color: CanvasText;
     background: linear-gradient(90deg, CanvasText var(--pct), Canvas var(--pct));
   }
-  .element::before { forced-color-adjust: none; background: CanvasText; }
   .sources li::after { background: CanvasText; }
   .sources li::before { border-color: CanvasText; }
 }

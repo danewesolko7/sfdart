@@ -93,6 +93,9 @@ abbr[title] { text-decoration: none; }
 }
 .skip-link:focus { top: 8px; }
 
+/* Skip-link target receives focus programmatically (tabindex="-1"); no ring on the whole page region */
+main:focus { outline: none; box-shadow: none; }
+
 .wrap {
   width: min(100% - 2 * var(--gutter), var(--content));
   margin-inline: auto;
@@ -265,7 +268,11 @@ abbr[title] { text-decoration: none; }
   margin: 0;
   padding: 0;
 }
-.site-footer li + li::before { content: "|"; padding: 0 12px; }
+.site-footer li + li::before {
+  content: "|";
+  content: "|" / ""; /* decorative: keep the separator out of the accessibility tree */
+  padding: 0 12px;
+}
 @media (max-width: 600px) {
   .site-footer ul { flex-direction: column; align-items: flex-start; }
   .site-footer li + li::before { content: none; }

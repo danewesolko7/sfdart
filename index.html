@@ -36,9 +36,10 @@
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <ul>
+        <ul role="list">
           <li><a href="#whats-inside">What's inside</a></li>
           <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#training">Report Training</a></li>
           <li><a href="#help">Help</a></li>
           <li><a class="btn btn--primary" href="sign-in.html">Sign In</a></li>
         </ul>
@@ -46,7 +47,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__copy">
         <p class="eyebrow">For <abbr title="Federal Housing Administration">FHA</abbr>-approved servicers</p>
@@ -54,7 +55,6 @@
         <p class="hero__lede">SF-DART is the self-service tool from the U.S. Department of Housing and Urban Development (<abbr title="U.S. Department of Housing and Urban Development">HUD</abbr>) for viewing your Tier Ranking System II (<abbr title="Tier Ranking System II">TRS II</abbr>) scores, case-level data behind each score, and quarterly performance reports. Report your training towards the annual training credit.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="sign-in.html">Sign In</a>
-          <a class="btn btn--secondary" href="/request-access">Request Access</a>
         </div>
       </div>
       <figure class="hero__media">
@@ -87,7 +87,7 @@
         <h2 id="inside-title" data-reveal>What's inside</h2>
         <p class="inside__intro" data-reveal><abbr title="Tier Ranking System II">TRS II</abbr> scores servicers each quarter on four elements of delinquent servicing.</p>
 
-        <ul class="elements">
+        <ul class="elements" role="list">
           <li class="element" data-reveal>
             <h3>Foreclosure Prevention</h3>
             <p>How often loss mitigation was attempted before a foreclosure was started.</p>
@@ -164,7 +164,7 @@
         <p class="platform" data-reveal>SF-DART is a business intelligence (BI) and integrated analytics platform for use by <abbr title="U.S. Department of Housing and Urban Development">HUD</abbr> and mortgagees to support mortgage servicing, claims, and property disposition. SF-DART supports <abbr title="U.S. Department of Housing and Urban Development">HUD</abbr>'s goal of assisting homeowners in avoiding foreclosure whenever possible while mitigating losses to the Mutual Mortgage Insurance Fund (<abbr title="Mutual Mortgage Insurance Fund">MMIF</abbr>).</p>
 
         <h3 class="visually-hidden" id="sources-title">Data sources that feed Analytics and trends</h3>
-        <ul class="sources" aria-labelledby="sources-title">
+        <ul class="sources" role="list" aria-labelledby="sources-title">
           <li data-reveal>7 years of <abbr title="Federal Housing Administration">FHA</abbr> mortgage data</li>
           <li data-reveal>Detailed mortgage default information</li>
           <li data-reveal>Mortgage insurance claims from servicers</li>
@@ -190,7 +190,7 @@
     <section class="how" id="how-it-works" aria-labelledby="how-title">
       <div class="wrap">
         <h2 id="how-title" data-reveal>How it works</h2>
-        <ol class="steps">
+        <ol class="steps" role="list">
           <li data-reveal>
             <h3>Request access</h3>
             <p>Your organization's staff sign up for an SF-DART account.</p>
@@ -211,6 +211,16 @@
       </div>
     </section>
 
+    <section class="training" id="training" aria-labelledby="training-title">
+      <div class="wrap">
+        <div data-reveal>
+          <h2 id="training-title">Annual training credit</h2>
+          <p>Already completed training? Report it toward your annual training credit.</p>
+        </div>
+        <a class="btn btn--primary" href="https://sfdart.hud.gov/dashboard-ta.html" data-reveal>Report your training</a>
+      </div>
+    </section>
+
     <section class="help" id="help" aria-label="Help and resources">
       <div class="wrap">
         <div>
@@ -225,9 +235,8 @@
         </div>
         <div>
           <h2>Resources</h2>
-          <ul>
-            <li><a class="link" href="/faq">Frequently asked questions</a></li>
-            <li><a class="link" href="/sfdart_user_agreement.pdf">Security and Usage Agreement (PDF)</a></li>
+          <ul role="list">
+            <li><a class="link" href="https://sfdart.hud.gov/sfdart_user_agreement.pdf#page=1">Security and Usage Agreement (PDF)</a></li>
             <li><a class="link" href="https://www.hud.gov/hud-partners/single-family-lender-performance">FHA lender performance</a></li>
           </ul>
         </div>
@@ -241,7 +250,8 @@
         <p>An official website of the U.S.A.</p>
         <p>This website complies with Executive Order 14224. English is the official language of the U.S. Government, and the English-language version of this website is the authoritative source for all federal information contained herein.</p>
       </div>
-      <ul>
+      <ul role="list">
+        <li><a class="link" href="mailto:sfdart-support@hud.gov">Contact support: sfdart-support@hud.gov</a></li>
         <li><a class="link" href="https://www.hud.gov/accessibility">Accessibility policy</a></li>
         <li><a class="link" href="https://www.hud.gov/privacy">Privacy and security policies</a></li>
       </ul>
@@ -266,7 +276,7 @@
             observer.unobserve(entry.target);
           }
         }
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0 });
 
       document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
 

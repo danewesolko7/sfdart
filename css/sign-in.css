@@ -1,10 +1,10 @@
 /* Sign-in page (sign-in.html). Requires base.css. */
 
-/* Sign-in */
+/* Sign-in: same width (1280px) and vertical padding as the home page hero */
 .signin {
   background: var(--green);
   color: var(--white);
-  padding: 88px 0 112px;
+  padding: 112px 0;
 }
 .signin__grid {
   display: grid;
@@ -98,14 +98,8 @@
   gap: 20px;
 }
 .notice h2 { font-size: 1.75rem; }
-.notice ul {
-  margin: 0;
-  padding-left: 1.25em;
-  display: grid;
-  gap: 12px;
-}
-.notice li { max-width: var(--measure); }
-.notice__contact { font-size: 1rem; }
+/* Paragraph spacing at least 1.5x line spacing (1.4.8), matching .footer__notices */
+.notice__body { display: grid; gap: 2.25em; }
 
 
 /* Motion: runs only under prefers-reduced-motion: no-preference. No JavaScript needed. */
@@ -130,7 +124,7 @@
 
 /* Responsive */
 @media (max-width: 960px) {
-  .signin { padding: 48px 0 72px; }
+  .signin { padding: 64px 0; }
   .signin__grid { grid-template-columns: 1fr; gap: 32px; }
 }
 

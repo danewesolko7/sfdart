@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="t">
+  <title id="t">Foreclosure Prevention</title>
+  <circle cx="32" cy="32" r="32" fill="#10653e"/>
+  <g transform="translate(14 14) scale(1.125)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.5 15 L16 5 L28.5 15"/><path d="M7 12.5 V27 H14"/><path d="M22.5 15.5 L28.5 17.6 V21.6 C28.5 24.9 26 27.1 22.5 28.4 C19 27.1 16.5 24.9 16.5 21.6 V17.6 Z"/><path d="M19.6 21.8 L21.8 24 L25.4 20.2"/>
+  </g>
+</svg>

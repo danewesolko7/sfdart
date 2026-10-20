@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="t">
+  <title id="t">SFDMS Reporting</title>
+  <circle cx="32" cy="32" r="32" fill="#10653e"/>
+  <g transform="translate(14 14) scale(1.125)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 4 H19 L25 10 V28 H8 Z"/><path d="M19 4 V10 H25"/><path d="M12 15 H21 M12 19 H21 M12 23 H16"/><path d="M18.5 23 L20.5 25 L24.5 21"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="t">
+  <title id="t">Redefaults</title>
+  <circle cx="32" cy="32" r="32" fill="#10653e"/>
+  <g transform="translate(14 14) scale(1.125)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 5 V27 H27"/><path d="M9 22 L13.5 16 L17.5 19 L22 12.5"/><path d="M22 12.5 L24.5 16.5 L27 13"/><path d="M9 27 V25 M12.5 27 V25 M16 27 V25 M19.5 27 V25 M23 27 V25 M26.5 27 V25"/><circle cx="27" cy="13" r="1.6" fill="#ffffff"/>
+  </g>
+</svg>

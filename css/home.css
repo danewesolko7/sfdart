@@ -280,20 +280,7 @@
   margin-bottom: 4px;
 }
 
-/* Annual training credit */
-.training {
-  background: var(--panel);
-  padding: 72px 0;
-}
-.training .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px 48px;
-}
-.training h2 { font-size: 2.25rem; margin-bottom: 12px; }
-.training p { font-size: 1.125rem; }
+/* Annual training credit (base styles in base.css) */
 .training > .wrap > :nth-child(2) { --i: 1; }
 
 
@@ -422,6 +409,4 @@
   .panel { padding: 32px 20px; }
   .scores div { grid-template-columns: minmax(0, 1fr) 64px 3.5em; gap: 10px; }
   .inside h2, .how h2 { font-size: 2.25rem; }
-  .training { padding: 56px 0; }
-  .training h2 { font-size: 1.875rem; }
 }

@@ -11,7 +11,7 @@ SF-DART is a website where HUD staff and FHA-approved mortgage servicers (compan
 
 ## What's in this repository, and what isn't
 
-**In this repository:** two pages, the home page and the first step of sign-in. They are plain HTML and CSS files: no frameworks, no build tools, nothing to install.
+**In this repository:** three pages: the home page, a frequently asked questions page, and the first step of sign-in. They are plain HTML and CSS files: no frameworks, no build tools, nothing to install.
 
 **Not in this repository.** These are separate systems that these pages link to:
 
@@ -35,8 +35,21 @@ From top to bottom:
 5. **What's inside (dark blue):** the four TRS II score elements (each card with its own icon), a sample scorecard (made-up data, labelled as such), a table showing how grades map to tiers, and the data sources behind SF-DART.
 6. **How it works:** four steps from getting an account to looking at case details.
 7. **Annual training credit (light gray):** a "Report your training" button that opens the training reporting site.
-8. **Help (green):** technical support email, the FHA Resource Center phone number, and resource links.
+8. **Help (green):** technical support email, the FHA Resource Center phone number, and resource links (frequently asked questions, the Security and Usage Agreement and FHA lender performance).
 9. **Footer:** support contact, accessibility and privacy policy links, and the required official-language notice.
+
+### Frequently asked questions: [faq.html](faq.html)
+
+Linked from the Resources list in the home page's Help section.
+
+1. Same government banner, header and navigation as the home page. "What's inside" and "How it works" go back to the home page; "Report Training" and "Help" jump to those sections on the FAQ page.
+2. **Title (green):** page heading, a link to the glossary and the support email.
+3. **Questions,** in five groups: About SF-DART, Accounts and sign-in, TRS II scores and tiers, Annual training credit, and Getting help. Every answer repeats facts already on the home or sign-in page. **If a fact changes (contact details, tier ranges, links), update it here too.**
+4. **Terms used on this site:** a glossary of industry terms (partial claim, redefault, SFDMS and others).
+5. Same Annual training credit and Help sections as the home page.
+6. Same footer as the home page.
+
+The answers are written in plain language, at about a US grade 6 reading level (WCAG 3.1.5). Keep new answers short, in short sentences, and add any new industry term to the glossary.
 
 ### Sign-in page: [sign-in.html](sign-in.html)
 
@@ -63,10 +76,12 @@ Then open <http://localhost:8000> in a browser. Press `Ctrl+C` in the terminal t
 
 ```text
 index.html          Home page
+faq.html            Frequently asked questions
 sign-in.html        Sign-in page
 css/
-  base.css          Styles shared by both pages: colors, header, footer, buttons, banner, help section
+  base.css          Styles shared by every page: colors, header, footer, buttons, banner, training and help sections (the sign-in page doesn't use the last two)
   home.css          Styles used only on the home page
+  faq.css           Styles used only on the FAQ page
   sign-in.css       Styles used only on the sign-in page
 img/
   hero-800.jpg      Home page photo, smaller version for phones
@@ -87,6 +102,8 @@ Each page loads `base.css` first, then its own stylesheet. The order matters.
 | Status strip (round, latest scores, system status) | `index.html`, the section marked `class="status"` |
 | Legal notice text | `sign-in.html`, the section marked `class="notice"` (client-approved wording) |
 | Support email address | Search all `.html` files for `sfdart-support@hud.gov`; it appears in several places |
+| Annual training credit or Help sections | These are copied onto the home page and the FAQ page (`index.html` and `faq.html`), just above the footer. Make the same change on both. On `faq.html`, the FAQ link in Resources has `aria-current="page"` because it points to that page. |
+| FAQ questions and answers | `faq.html`. Each group is a `<section class="faq-group">`; each question is an `<h3>` followed by its answer. |
 | "What's inside" card icons | Replace the matching `img/sfdart-icon-*.svg` file. Keep the green circle (`#10653e`) and white strokes so the contrast figures below still hold, and keep `alt=""` on the `<img>` in `index.html`. |
 | Colors | `css/base.css`, top of the file. Each color notes its contrast ratio; recheck contrast after any change (see Accessibility below). |
 
@@ -123,7 +140,8 @@ WCAG has three levels:
 - **Level AA:** no known problems. Met according to a line-by-line review of the code on October 20, 2026.
 - **Level AAA:** met for everything the code controls. Two content items fall short, and AAA isn't required:
   - The legal notice is written at a higher reading level than AAA asks for.
-  - Industry terms such as "partial claim" have no glossary.
+  - The home page uses industry terms such as "partial claim" without explaining them in place. The FAQ page's "Terms used on this site" glossary now explains them, and the home page links to the FAQ from its Resources list.
+- **FAQ page:** checked on October 21, 2026. pa11y (axe and HTML_CodeSniffer) found no errors at Level AA or AAA. No sideways scrolling at 320px wide (the same as 400% zoom). The keyboard and screen reader checks have not been run on this page yet.
 - **Keyboard test:** passed on October 20, 2026. Everything on both pages can be reached and used with the keyboard alone.
 - **Zoom test:** passed on October 20, 2026. Both pages work at 200% and 400% zoom with nothing cut off and no sideways scrolling.
 - **Automated scan:** passed on October 20, 2026. pa11y with the axe and HTML_CodeSniffer engines found no errors at Level AA or AAA on either page, including the sign-in page with its error message showing.
@@ -144,6 +162,8 @@ Each item lists the WCAG success criterion number it addresses, for auditors.
 | Buttons and links are at least 44×44 pixels | Easy to tap and click, including with limited hand control | 2.5.5 |
 | Animations are short, never flash or loop, and turn off when the visitor's device is set to reduce motion | Safe for people with motion sensitivity or seizure disorders | 2.2.2, 2.3.1, 2.3.3 |
 | Abbreviations (HUD, FHA, TRS II…) show their full name | Unfamiliar acronyms are explained | 3.1.4 |
+| The FAQ page has a glossary of industry terms and plain-language answers (about grade 6) | Readers can look up unfamiliar words and follow the answers easily | 3.1.3, 3.1.5 |
+| Every link says where it goes on its own (for example "Call the FHA Resource Center at (800) 225-5342", not just the number) | Screen reader users browsing a list of links know what each one does | 2.4.9 |
 | Text line length, line spacing and paragraph spacing are controlled | Easier reading for people with dyslexia or low vision | 1.4.8 |
 | The support contact is the first footer link on every page | Help is always in the same place | 3.2.6 |
 | Sign-in errors appear as text, are announced by screen readers and move the cursor to the field | Everyone knows what went wrong and how to fix it | 3.3.1, 3.3.3, 4.1.3 |
@@ -166,6 +186,7 @@ Each item lists the WCAG success criterion number it addresses, for auditors.
    ```sh
    npx pa11y --runner axe --runner htmlcs --standard WCAG2AA --config pa11y.json http://localhost:8000/index.html
    npx pa11y --runner axe --runner htmlcs --standard WCAG2AA --config pa11y.json http://localhost:8000/sign-in.html
+   npx pa11y --runner axe --runner htmlcs --standard WCAG2AA --config pa11y.json http://localhost:8000/faq.html
    ```
 
    The config turns on the "reduce motion" setting so every section is visible at once. Without it, the scanner checks text while it is still fading in and reports false contrast errors, and it skips sections that haven't been scrolled into view yet.

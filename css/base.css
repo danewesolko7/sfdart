@@ -232,6 +232,21 @@ main:focus { outline: none; box-shadow: none; }
 }
 .site-nav a:not(.btn):hover { text-decoration: underline; }
 
+/* Annual training credit */
+.training {
+  background: var(--panel);
+  padding: 72px 0;
+}
+.training .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 48px;
+}
+.training h2 { font-size: 2.25rem; margin-bottom: 12px; }
+.training p { font-size: 1.125rem; }
+
 /* Help */
 .help {
   background: var(--green);
@@ -274,6 +289,8 @@ main:focus { outline: none; box-shadow: none; }
   padding: 0 12px;
 }
 @media (max-width: 600px) {
+  .training { padding: 56px 0; }
+  .training h2 { font-size: 1.875rem; }
   .site-footer ul { flex-direction: column; align-items: flex-start; }
   .site-footer li + li::before { content: none; }
 }
